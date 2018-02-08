@@ -1,0 +1,29 @@
+{
+  "name": "koa-datadog-middleware",
+  "version": "1.0.0",
+  "description": "A koa middleware for reporting metrics to datadog",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topfreegames/koa-datadog-middleware.git"
+  },
+  "keywords": [
+    "koa",
+    "nodejs",
+    "datadog",
+    "monitoring",
+    "metrics"
+  ],
+  "author": "Felipe Cavalcanti <felipe.cavalcanti@tfgco.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/topfreegames/koa-datadog-middleware/issues"
+  },
+  "homepage": "https://github.com/topfreegames/koa-datadog-middleware#readme",
+  "dependencies": {
+    "hot-shots": "^5.0.1",
+    "koa": "^1.5.1",
+    "koa-route": "^2.4.2"
+  }
+}
