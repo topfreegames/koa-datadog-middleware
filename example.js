@@ -14,7 +14,7 @@ app.use(function *(next){
 // 404
 
 app.use(function *(next){
-  if ('/404' == this.path) return
+  if ('/404/:bla' == this.path) return
   yield next
 })
 
