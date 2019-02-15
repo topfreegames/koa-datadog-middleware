@@ -1,7 +1,7 @@
 koa-datadog-middleware
 ======================
 
-This middleware will report metrics to datadog regarding an app's response time and number of requisitions spplited by the tags (status_code, path and method).
+This middleware will report metrics to datadog regarding an app's response time and number of requisitions spplited by the tags (status_code, path and method). Custom tags are also available.
 
 It reports metrics using dogstatsd [histograms](https://docs.datadoghq.com/developers/dogstatsd/#histograms).
 
@@ -11,6 +11,8 @@ Import it and register as a middleware. e.g.
 var ddog = require('koa-datadog-middleware')
 app.use(ddog())
 ```
+
+All tags present in `ctx.state.datadog` will be automatic concat in the default tags.
 
 ### configuration / customization
 The middleware is based on [hot-shots](https://github.com/brightcove/hot-shots) lib, it will pass an options map forward to hot-shots, so the configuration are the same:
