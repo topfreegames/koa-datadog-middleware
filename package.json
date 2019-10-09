@@ -1,6 +1,6 @@
 {
   "name": "koa-datadog-middleware",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "A koa middleware for reporting metrics to datadog",
   "main": "index.js",
   "scripts": {},
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/topfreegames/koa-datadog-middleware#readme",
   "dependencies": {
-    "hot-shots": "^5.0.1",
+    "hot-shots": "^6.5.1",
     "koa": "^1.5.1",
     "koa-route": "^2.4.2"
   }
