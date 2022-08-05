@@ -37,13 +37,31 @@ Note that two options (cacheDns and maxBufferSize) differs from the original lib
 
 #### Example
 
-```
+Reporting metrics as histograms:
+
+```js
 const ddog = require('koa-datadog-middleware')
 
 const config = {
     "host": my.statsd.host.com,
     "port": 8133,
-    "cacheDns": true
+    "cacheDns": true,
+    "reportingMethod": "histogram"
+}
+
+app.use(ddog(config))
+```
+
+Reporting metrics as distributions:
+
+```js
+const ddog = require('koa-datadog-middleware')
+
+const config = {
+    "host": my.statsd.host.com,
+    "port": 8133,
+    "cacheDns": true,
+    "reportingMethod": "distribution"
 }
 
 app.use(ddog(config))
