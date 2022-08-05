@@ -1,9 +1,9 @@
 koa-datadog-middleware
 ======================
 
-This middleware will report metrics to datadog regarding an app's response time and number of requisitions spplited by the tags (status_code, path and method). Custom tags are also available.
+This middleware will report metrics to datadog regarding an app's response time and number of requisitions splitted by the tags (status_code, path and method). Custom tags are also available.
 
-It reports metrics using dogstatsd [histograms](https://docs.datadoghq.com/developers/dogstatsd/#histograms).
+It reports metrics using [dogstatsd](https://docs.datadoghq.com/developers/dogstatsd) histograms or distributions.
 
 ### how to use
 Import it and register as a middleware. e.g.
@@ -15,7 +15,7 @@ app.use(ddog())
 All tags present in `ctx.state.datadog` will be automatic concat in the default tags.
 
 ### configuration / customization
-The middleware is based on [hot-shots](https://github.com/brightcove/hot-shots) lib, it will pass an options map forward to hot-shots, so the configuration are the same:
+The middleware is based on [hot-shots](https://github.com/brightcove/hot-shots) lib, it will pass an options map forward to hot-shots, so the configuration are the similar:
 
 * host: The host to send stats to default: localhost
 * port: The port to send stats to default: 8125
@@ -30,6 +30,8 @@ The middleware is based on [hot-shots](https://github.com/brightcove/hot-shots) 
 * telegraf: Use Telegraf's StatsD line protocol, which is slightly different than the rest default: false
 * sampleRate: Sends only a sample of data to StatsD for all StatsD methods. Can be overriden at the method level. default: 1
 * errorHandler: A function with one argument. It is called to handle various errors. default: none, errors are thrown/logger to console
+* metric: Name of the metric to be reported. default: "koa.router.response_time_ms"
+* reportingMethod: Reporting method to be used. Should be "histogram" or "distribution". default: "histogram"
 
 Note that two options (cacheDns and maxBufferSize) differs from the original lib.
 
